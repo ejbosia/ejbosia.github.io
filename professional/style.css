@@ -1,0 +1,39 @@
+article {
+	background-color: #FFFFFF;
+}
+
+
+section {
+	font-family: 'Droid Sans', sans-serif;
+}
+.Tight{
+	width: 900px;
+	margin: auto;	
+}
+
+
+body {
+	background-color: #FFFFFF;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 60%;
+}
+.large {
+	    width: 100%;
+}
+.small {
+	    width: 40%;
+}
+
+h1 {
+	font-size: 250%;
+}
+h2 {
+	font-size: 200%;
+}
+h3 {
+	font-size: 150%;
+}
