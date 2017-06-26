@@ -22,10 +22,14 @@ img {
     width: 60%;
 }
 .large {
-	    width: 100%;
+	display: block;
+    margin: auto;
+	width: 100%;
 }
 .small {
-	    width: 40%;
+	display: block;
+    margin: auto;
+	width: 40%;
 }
 
 h1 {
