@@ -16,21 +16,21 @@
 				
 				The final project for Unified Robotics III was an embedded controls project. The main objective of the project was program the arm to lift and sort blocks autonomously from a moving conveyor to simulate an assembly line. My responsibilities included determining sensor placement, tuning the PID, writing high-level logic code, and setting up the inverse kinematics calculations in MATLAB, shown in Figure \ref{3001_matlab}. The motors were driven by a DAC, which connected to the microcontroller via an SPI interface.
 
-				<table>
+				<table class = "large">
 					<caption align="bottom">Code</caption>
-					<tr><td><img src="RBE3001/code.PNG" alt="HTML5 Icon" style="width:1576;height:732;"  class="large"> </td></tr>
+					<tr><td><img src="RBE3001/code.PNG" alt="HTML5 Icon" style="width:1576;height:732;"> </td></tr>
 				</table>
 				
-				<table>
+				<table class = "large">
 					<caption align="bottom">Wheelbase</caption>
-					<tr><td><img src="RBE3001/code_2.PNG" alt="HTML5 Icon" style="width:1426;height:687;"  class="large"> </td></tr>
+					<tr><td><img src="RBE3001/code_2.PNG" alt="HTML5 Icon" style="width:1426;height:687;"> </td></tr>
 				</table>
 				
 				The structure of the program was broken up into a main file which was linked to different libraries. The PID code shown in Figure \ref{3001_pid} was linked to a globals library which contained the variables for the integral error, as well as the PID constants. The return of the calcPID function was used by the gotoAngles function shown in Figure \ref{3001_motor} to drive the motors to the correct positions.
 				
-				<table>
+				<table class = "image">
 					<caption align="bottom">MATLAB Inverse Kinematics Code</caption>
-					<tr><td><img src="RBE3001/matlab.PNG" alt="HTML5 Icon" style="width:959;height:853;" class="image"> </td></tr>
+					<tr><td><img src="RBE3001/matlab.PNG" alt="HTML5 Icon" style="width:959;height:853;"> </td></tr>
 				</table>
 				
 				<p>
