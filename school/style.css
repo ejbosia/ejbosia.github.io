@@ -25,7 +25,7 @@ img {
 	max-width: 100%;
 }
 .small {
-	width: 40%;
+	max-width: 40%;
 }
 
 h1 {
