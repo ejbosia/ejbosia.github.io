@@ -19,10 +19,10 @@ body {
 img {
     display: block;
     margin: auto;
-    width: 60%;
+    max-width:60%;
 }
 .large {
-	width: 100%;
+	max-width: 100%;
 }
 .small {
 	width: 40%;
