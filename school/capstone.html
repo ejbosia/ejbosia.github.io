@@ -14,48 +14,48 @@
 				<p><h2>Capstone</h2>
 				<p> August 2016 - May 2017
 				
-				<p><img src="MQP\e_box.png" alt="HTML5 Icon" style="width:3688;height:1704">
-
-				<p> The Drone Delivery of Medical Supplies project was my capstone project working in a group of four students at WPI. The purpose of the project was to solve the problem of transporting cold-chained medical supplies, such as vaccines, across the last leg of the supply chain. The package needed to be a miniature refrigeration device light enough to fit on a drone, large enough to carry 0.4 liters of vaccine vials, and powerful enough to maintain a temperature range of between 2 and 8 degrees Celsius. The package design was essentially a short cylinder with a thermoelectric cooler (TEC) mounted on the bottom.
-								
 				<table class="image">
-					<caption align="bottom"></caption>
-					<tr><td><img src="MQP\flir.jpg" alt="HTML5 Icon" style="width:320;height:213;"> </td></tr>
+					<caption align="bottom">MATLAB Graph of used for Optimization</caption>
+					<tr><td><img src="MQP\matlab.png" alt="HTML5 Icon" style="width:700;height:525;"> </td></tr>
 				</table>
-				
-				<p>My contributions to the mechanical design were largely focused around developing a theoretical model of the thermodynamic system. To do so, I used the thermal resistance equations for conduction and convection. The function used to determine the heat transfer through the cylinder walls is shown in Figure \ref{matlab_graph}. The materials of the package were determined by the mechanical engineering students in the group. 
+
+				<p> The Drone Delivery of Medical Supplies project was my capstone project working in a group of four students at WPI. The purpose of the project was to solve the problem of transporting cold-chained medical supplies, such as vaccines, across the last leg of the supply chain. The package needed to be a miniature refrigeration device light enough to fit on a drone, large enough to carry 0.4 liters of vaccine vials, and powerful enough to maintain a temperature range of between 2 and 8 degrees Celsius. The package design was essentially a short cylinder with a thermoelectric cooler (TEC) mounted on the bottom. Because of my experience with programming and electronics, I ended up working on the simulation and control side of the package.
+								
 				
 				<table class="image">
-					<caption align="bottom"></caption>
+					<caption align="bottom">MATLAB Graph used for Optimization</caption>
 					<tr><td><img src="MQP\matlab.png" alt="HTML5 Icon" style="width:700;height:525;"> </td></tr>
 				</table>
 				
-				<p> Using the thermal resistance equations, I first looked at the heat entering the system. Because the design of the container was still in process, the radius and insulation thickness were variable. These values were iterated upon to generate a three-dimensional graph relating heat wattage into the system to the radius of the cylinder and insulation thickness, shown in Figure \ref{matlab_heat}
+				<p>My contributions to the mechanical design, aside from brainstorming with the team, were largely focused around developing a theoretical model of the thermodynamic system. To do this, I used the thermal resistance equations for conduction and convection in conjunction with MATLAB and Simulink. Initially I used MATLAB to quickly iterate through the potential design parameters and optimize our design. Afterwards I developed an in-depth Simulink model of the system in order to better model the nonlinear properties of the thermoelectric cooler and be able to predict the system response (MATLAB model only looked at end conditions). Using this model I could compare things like time to certain temperatures, feasibility at different ambient temperatures, expected battery life, and control stability.
 				
 				<table class="image">
-					<caption align="bottom"></caption>
-					<tr><td><img src="MQP\simulink.PNG" alt="HTML5 Icon" style="width:709;height:702;"> </td></tr>
-				</table>
-				
-				<p> This concept was expanded upon to optimize the system. I found the internal volume at each iteration (adding insulation lowered the volume) and created a ratio between the heat transfer and the volume. The most optimal configuration had the lowest quotient value. Figure \ref{MQP_heat1} shows the three-dimensional graph relating this quotient to the radius of the cylinder and the insulation thickness. Figure \ref{MQP_heat2} shows the same quotient with the $\dot{Q}$ values higher than 6 watts removed (around max power of TEC) and volumes under 1 liter removed. This graph was used to select a cylinder radius of 4" (0.1016 meters) and an insulation thickness of 1" (0.0254 meters). \clearpage
-				
-				<table class="image">
-					<caption align="bottom"></caption>
+					<caption align="bottom">Basic System of Thermodynamic Equations</caption>
 					<tr><td><img src="MQP\thermodynamics.PNG" alt="HTML5 Icon" style="width:621;height:397;"> </td></tr>
 				</table>
 				
-				<p> To determine the system response, I needed to develop a more sophisticated model. The model would need to take into account the nonlinear relationship of the TEC heat moved compared to input voltage, as well as the heat characteristics of the package, coolsink, and heatsink. Aside from the complex TEC math, the primary structure of the program was a cycle between wattage, energy, and temperatures. I found each state using these equations shown in Figure \ref{fig_MQP_hm}. Thermoelectric coolers move heat related to the temperature differential between the hot and cold sides. I was able to use the temperatures of a small slice of the heatsink and coolsink to input into the TEC function block. Figure \ref{fig_MQP_sim} shows the Simulink model of the thermodynamic system.
+				<p> For the SImulink model I needed to take into account the nonlinear relationship of the TEC heat moved compared to input voltage, as well as the heat characteristics of the package, coolsink, and heatsink. Aside from the complex TEC math, the primary structure of the program was a cycle between wattage, energy, and temperatures. I found each state using these equations (shown above). Thermoelectric coolers move heat related to the temperature differential between the hot and cold sides. I was able to use the temperatures of a small slice of the heatsink and coolsink to input into the TEC function block. The image below shows the Simulink model of the thermodynamic system.
 				
 				<table class="image">
-					<caption align="bottom"></caption>
+					<caption align="bottom">Simulink Model of Thermodynamic System</caption>
+					<tr><td><img src="MQP\simulink.PNG" alt="HTML5 Icon" style="width:709;height:702;"> </td></tr>
+				</table>
+				
+				<p> When we got to the prototyping stage of the project, I switched from running simulations to building the control circuit and programming the microcontroller. The image below shows the result of the wiring. I designed the circuit to be powered either by a power supply or a 3s lithium polymer battery. The method of control was a simple relay - initially, I wanted to use an op-amp (OPA549) to amplify a DC signal voltage generated by low-pass filtering a PWM signal from our microcontroller, but the thermal issues caused by the high current draw from the TEC made it infeasible. The electronics also include GPS and GSM capabilities, as well as a basic user interface (not pictured) with LEDs and switches.
+				
+				<table class="image">
+					<caption align="bottom">Electronics Box Wiring</caption>
+					<tr><td><img src="MQP\e_box.png" alt="HTML5 Icon" style="width:3688;height:1704"> </td></tr>
+				</table>
+				
+
+				<p>As for the result of our project, we were accepted to present at the University of Minnesota for the Design of Medical Devices Conference. We also advanced to the finals for the Provost's Design Award for Biomedical engineering at WPI. Overall the project was extremely rewarding for the time we put into it and a great way to finish off four years at WPI.
+				
+				<table class="image">
+					<caption align="bottom">University of Minnesota Design of Medical Devices Conference</caption>
 					<tr><td><img src="MQP\UMN.png" alt="HTML5 Icon" style="width:1650;height:1100;"> </td></tr>
 				</table>
 				
-				<p> To analyze system responses, I set up a few different control methods. Ultimately I chose to use a simple relay to turn the TEC on and off at given temperature, but I also set up a model of PID control. In Figure \ref{test_6v_relay_comp}, the microcontroller was programmed to hold the temperature between 8 and 10 degrees Celsius. The yellow line shows the package temperature, which was held within those bounds. Figure \ref{sim_6v_relay_comp} shows the simulated result with the same input conditions.
-				
-				<p>Figure \ref{code_relay} shows how the relay control was programmed. Different control methods such as PID were also examined, but relay control was selected due to the thermal concerns of the OPA 549 op-amp. TECs do not work with PWM signals, so the method of driving the TEC with PID control was converting a PWM signal to direct voltage using a low pass filter, then amplifying the voltage using the OPA 549 op-amp.
-
-				<p>As for the result of our project, we were accepted to present at the University of Minnesota for the Design of Medical Devices Conference. We also advanced to the finals for the Provost's Design Award for Biomedical engineering at WPI. The all functions of the package worked as expected, but there were definite avenues for future improvements.
 			</article>
 		</section>
 		
