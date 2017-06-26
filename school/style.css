@@ -5,6 +5,8 @@ article {
 
 section {
 	font-family: 'Droid Sans', sans-serif;
+	font-size: 24px;
+
 }
 .Tight{
 	width: 900px;
@@ -14,7 +16,6 @@ section {
 
 body {
 	background-color: #FFFFFF;
-	font-size: 24px;
 }
 
 img {
