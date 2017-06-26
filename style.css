@@ -103,6 +103,7 @@ div.gallery img {
 div.desc {
     padding: 30px;
     text-align: center;
+	font-size:18 px;
 }
 
 * {
