@@ -22,13 +22,9 @@ img {
     width: 60%;
 }
 .large {
-	display: block;
-    margin: auto;
 	width: 100%;
 }
 .small {
-	display: block;
-    margin: auto;
 	width: 40%;
 }
 
