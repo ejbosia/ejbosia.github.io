@@ -48,5 +48,6 @@ caption{
 }
 
 iframe{
-	margin:auto;
+	display: block;
+	margin: auto;
 }
