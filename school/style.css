@@ -22,13 +22,9 @@ img {
     max-width:60%;
 }
 .large {
-	display: block;
-    margin: 0 auto;
 	max-width: 100%;
 }
 .small {
-	display: block;
-    margin: 0 auto;
 	max-width: 40%;
 }
 
@@ -54,4 +50,9 @@ caption{
 iframe{
 	display: block;
 	margin: auto;
+}
+
+table{
+	margin-left:auto;
+	margin-right:auto;
 }
