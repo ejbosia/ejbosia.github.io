@@ -9,7 +9,7 @@
 '<a href="personal.html">Personal</a>' + 
 '</div>' + 
 '<li><a href="class.html">Class List</a></li>' +
-'<li><a href="interests.html">Interests</a></li>' +  
+//'<li><a href="interests.html">Interests</a></li>' +  
 '<li><a href="resume.html">Resume</a></li>' + 
 '</li>' + 
 '</ul>' ;	
