@@ -4,8 +4,9 @@
 '<li class="dropdown">' + 
 '<a href="javascript:void(0)" class="dropbtn">Projects</a>' + 
 '<div class="dropdown-content">' + 
+//'<a href="formulatrix.html">Formulatrix</a>' + 
 '<a href="school.html">School</a>' + 
-'<a href="professional.html">Professional</a>' + 
+'<a href="internship.html">Internship</a>' + 
 '<a href="personal.html">Personal</a>' + 
 '</div>' + 
 '<li><a href="class.html">Class List</a></li>' +
