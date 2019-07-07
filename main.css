@@ -56,7 +56,7 @@ body {
   padding-left: 20px;
 }
 
-/* Fake image */
+/* Real image */
 img {
   width: 100%;
   height: auto;
@@ -82,6 +82,22 @@ img {
   text-align: center;
   background: #ddd;
   margin-top: 20px;
+}
+/* Individual sections */
+.article {
+    width: 1000px;
+    text-align: left;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+}
+
+/* centering for an image */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
