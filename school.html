@@ -22,59 +22,73 @@
                 <h2>Worcester Polytecnic Institute</h2>
                 <p>I studied at Worcester Polytechnic Institute (WPI) from 2013 to 2017. With my time at WPI I worked on a wide variety of projects through both the robotics engineering program and mechanical engineering program. From my studies I gained a robust skillset built around project-based engineering.</p>
             </div>
-            
-
-            <div class = "gallery">
-                <div class="bucket">
-                    <a href="index.html">
-                        <img src="school/MQP/preview.jpg" style="width:100%">
+            <div class="card">
+                <div class = "gallery">
+                    <a class="normal_link" href="index.html">
+                        <div class="bucket">
+                            <img src="school/MQP/preview.jpg" style="width:100%">
+                            <div class="desc"> Software Engineering </div>
+                        </div>
                     </a>
-                    <div class="desc"> Software Engineering </div>
                 </div>
-            </div>
-            <div class="gallery">
-                <a href="index.html">
-                    <div class = "bucket">
-                        <img src="school/RBE3002/preview.png" style="width:100%">
-                        <div class="desc"> Software Engineering </div>
-                    </div>
-                </a>
-            </div>
-            <div class="gallery">
-                <a href="index.html">
-                    <div class="bucket">
-                        <img src="school/RBE3001/preview.jpg" style="width:100%">
-                        <div class="desc"> RBE 3001 </div>
-                    </div>
-                </a>
-            </div>   
-            <div class="gallery">
-                <a href="index.html">
-                    <div class="bucket">
-                        <img src="school/RBE3001/preview.jpg" style="width:100%">
-                        <div class="desc"> RBE 3001 </div>
-                    </div>                
-                 </a>
-            </div>
-            <div class="gallery">
-                <a href="index.html">
-                    <div class="bucket">
-                        <img src="school/RBE3001/preview.jpg" style="width:100%">
-                        <div class="desc"> RBE 3001 </div>
-                    </div>
-                </a>
-            </div>
-            <div class="gallery">
-                <a href="index.html">
-                    <div class="bucket">
-                        <img src="school/RBE3001/preview.jpg" style="width:100%">
-                        <div class="desc"> RBE 3001 </div>
-                    </div>
-                </a>
-            </div>
-          </div> 
-          
-          
+                <div class="gallery">
+                    <a class="normal_link" href="school/roboticsIV.html">
+                        <div class = "bucket">
+                            <img src="school/RBE3002/preview.png" style="width:100%">
+                            <div class="desc"> Software Engineering </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery">
+                    <a class="normal_link" href="index.html">
+                        <div class="bucket">
+                            <img src="school/RBE3001/preview.jpg" style="width:100%">
+                            <div class="desc"> RBE 3001 </div>
+                        </div>
+                    </a>
+                </div>   
+                <div class="gallery">
+                    <a class="normal_link" href="index.html">
+                        <div class="bucket">
+                            <img src="school/Soft_Eng/preview.png" style="width:100%">
+                            <div class="desc"> RBE 3001 </div>
+                        </div>                
+                     </a>
+                </div>
+                <div class="gallery">
+                    <a class="normal_link" href="index.html">
+                        <div class="bucket">
+                            <img src="school/RBE4815/preview.png" style="width:100%">
+                            <div class="desc"> Industrial Robotics </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery">
+                    <a class="normal_link" href="index.html">
+                        <div class="bucket">
+                            <img src="school/Mechatronics/preview.png" style="width:100%">
+                            <div class="desc"> Mechatronics </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery">
+                    <a class="normal_link" href="index.html">
+                        <div class="bucket">
+                            <img src="school/RBE2002/preview.png" style="width:100%">
+                            <div class="desc"> RBE 2002 </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery">
+                    <a class="normal_link" href="index.html">
+                        <div class="bucket">
+                            <img src="school/RBE2001/preview.png" style="width:100%">
+                            <div class="desc"> RBE 2001 </div>
+                        </div>
+                    </a>
+                </div>                
+            </div> 
+          </div>
           
           
 
@@ -99,37 +113,6 @@
             
           </div>
         </div>
-        
-        <script>
-            var slideIndex = 1;
-            showSlides(slideIndex);
-
-            // Next/previous controls
-            function plusSlides(n) {
-            showSlides(slideIndex += n);
-            }
-
-            // Thumbnail image controls
-            function currentSlide(n) {
-            showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1} 
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none"; 
-            }
-            for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block"; 
-            dots[slideIndex-1].className += " active";
-            }
-        </script>
         
 	</body>
 </html>
