@@ -20,11 +20,14 @@
                 <li>os</li>
             </ul>
                        
-            <p> <b>Program</b>
-            The program was broken into two scripts. The first script identified the ports, and determined the locations of the centroids of each. The second script calculated the mean distance from all of the ports and calculated the shrinkage.
+            <p> <h3>Port Identification Script</h3>
+            <p>The port identification script found the contours of the backlit holes in the plate, then determined the contour characterstics of the points. The holes were also identified based on their position in the image. All of this data was saved to a csv file using Pandas.
             
-            <p> <b>Features:</b
             
+            <p> <h3>Shrinkage Calculation Script</h3>
+            <p>Using the csv position data from each image, the plate shrinkage was calculated.
+            
+
             <table class="img">
                 <caption align="bottom">Example code from form</caption>
                 <tr><td><img src="cc_U.png" alt="Code snippet" style="width:600;height:600;"> </td></tr>
