@@ -11,9 +11,9 @@
 		<section class = "article">            
             <img src="plate_poker/ui.png" alt="HTML5 Icon" style="width:50%;height:50%;margin:auto"> 
              
-             <p> One of the production steps for making dPCR microplates is poking 0.5mm diameter holes in the plate. This was at the time the most time consuming part of the process. The microfluidics are on one side of the plate, and the input wells are on the other side of the plate. With the expected increase in production with the release of the Constellation, an automated system was desired to avoid having a production team poking plates.
+            <p> One of the production steps for making dPCR microplates is poking 0.5mm diameter holes in the plate. This was at the time the most time consuming part of the process. The microfluidics are on one side of the plate, and the input wells are on the other side of the plate. With the expected increase in production with the release of the Constellation, an automated system was desired to avoid having a production team poking plates.
              
-            <p> <b>Goals:</b>
+            <p> <h3>Goals:</h3>
             <ul>
                 <li>Handle 24 well and 96 well plate formats</li>
                 <li>Poke 200 plates in a work shift</li>
@@ -25,7 +25,7 @@
             <p> Instead of making a new instrument we chose to retrofit the original Constellation to serve this purpose. The instrument was already set up with a plate seat, two axis movement, and a camera already set up.
             
             <p> <b>Program</b>
-            The software challenge of the instrument was moving the code from the old plate poker to the new instrument. The old instrument was controlled by CAN, and the new poker through our own control board.
+            <p> The software challenge of the instrument was moving the code from the old plate poker to the new instrument. The old instrument was controlled by CAN, and the new poker through our own control board.
             
             <p> To get the motor control function to work, I took the code of our terminal program used for controlling our boards. I then cut out all of the functionality that was unneeded by the plate poker program.
             
