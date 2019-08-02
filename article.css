@@ -63,7 +63,7 @@ img {
 }
 
 .img{
-    max-height: 400px;
+    max-width: 600px;
     margin: auto;
     width:auto;
     height:auto;
@@ -131,18 +131,18 @@ a.normal_link{
     width: 100%;
     padding: 0;
   }
-  
-  .img{
-    height:auto;
-    width:100%;
-    margin:auto;
-    max-height:auto;
-  }
+ 
 }
 
 @media screen and (max-width: 600px) {
     .gallery{
       width:100%;
+    }
+    .img{
+        width:100%;
+        height:auto;
+        margin:auto;
+        max-height:auto;
     }
 }
 
