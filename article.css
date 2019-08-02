@@ -63,7 +63,11 @@ img {
 }
 
 .img{
+    max-height: 400px;
     margin: auto;
+    width:auto;
+    height:auto;
+    display:block;
 }
 
 /* Clear floats after the columns */
@@ -126,6 +130,13 @@ a.normal_link{
   .leftcolumn, .rightcolumn {   
     width: 100%;
     padding: 0;
+  }
+  
+  .img{
+    height:auto;
+    width:100%;
+    margin:auto;
+    max-height:auto;
   }
 }
 

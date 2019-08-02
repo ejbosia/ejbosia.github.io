@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<link rel="stylesheet" type="text/css" href="article.css">
+		<link rel="stylesheet" type="text/css" href="../article.css">
 	</head> 
 	<body>	
         <section class = "header">
@@ -9,7 +9,7 @@
         </section>
         
 		<section class = "article">            
-            <img src="plate_poker/ui.png" alt="HTML5 Icon" style="width:50%;height:50%;margin:auto"> 
+            
              
              <p> As part of the R&D process we aimed to determine the shrinkage rate of the plates after injection molding. Despite this project not working as expected, there are some interesting things I did to try to get it to work. The code was written in Python, using jupyter as a quick prototyping tool.
              
@@ -23,10 +23,24 @@
             <p> <h3>Port Identification Script</h3>
             <p>The port identification script found the contours of the backlit holes in the plate, then determined the contour characterstics of the points. The holes were also identified based on their position in the image. All of this data was saved to a csv file using Pandas.
             
+            <table class="img">
+                <caption align="bottom">Detection of Ports</caption>
+                <tr><td><img src="shrinkage_analysis/plate_detection.png" alt="HTML5 Icon" style="width:100%;margin:auto;max-width:600px"> </td></tr>
+            </table>  
             
             <p> <h3>Shrinkage Calculation Script</h3>
             <p>Using the csv position data from each image, the plate shrinkage was calculated.
             
+            <table class="img">
+                <caption align="bottom">Map of Shrinkage Magnitude</caption>
+                <tr><td><img src="shrinkage_analysis/shrinkage_map.png" alt="HTML5 Icon" style="width:100%;margin:auto;max-width:600px"></td></tr>
+            </table>            
+            
+            <table class="img">
+                <caption align="bottom">Map of Shrinkage Direction</caption>
+                <tr><td><img src="shrinkage_analysis/direction_map.png" alt="HTML5 Icon" style="width:100%;margin:auto;max-width:600px"></td></tr>
+            </table>
+          
 
             <table class="img">
                 <caption align="bottom">Example code from form</caption>
