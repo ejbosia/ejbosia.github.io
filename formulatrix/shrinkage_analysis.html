@@ -2,6 +2,8 @@
 <html lang="en">
 	<head>
 		<link rel="stylesheet" type="text/css" href="../article.css">
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=python&amp"></script>
+
 	</head> 
 	<body>	
         <section class = "header">
@@ -12,6 +14,61 @@
             
              
              <p> As part of the R&D process we aimed to determine the shrinkage rate of the plates after injection molding. Despite this project not working as expected, there are some interesting things I did to try to get it to work. The code was written in Python, using jupyter as a quick prototyping tool.
+             
+            <pre  class="prettyprint">
+# detects the dust from an input image
+def size_detector(image_location, threshold=100):
+
+    # read an resize the image
+    image = cv2.imread(image_location, 0)
+    image = cv2.resize(image, None, fx=4, fy=4)
+
+    # blur the image to make threshold cleaner
+    image = cv2.GaussianBlur(image, (5, 5), 0)
+
+    # threshold the image to isolate the port locations
+    ret, im_bw = cv2.threshold(image, threshold, 255, cv2.THRESH_BINARY)
+
+    # find the contours of the image
+    im2, contours, hierarchy = cv2.findContours(im_bw, cv2.RETR_EXTERNAL, 
+        cv2.CHAIN_APPROX_SIMPLE)
+
+    # filter contours by area (to avoid noise) --> output list of filtered contours
+    locations = []
+    for contour in contours:
+        area = cv2.contourArea(contour)
+
+        if area < 30:
+            continue   
+        elif area > 1000:
+            continue
+        else:
+            locations.append(contour)
+
+    print("Number of contours:", len(locations))
+    # read image for contours plot
+    color_image = cv2.imread(image_location)
+    color_image = cv2.resize(color_image, None, fx=4, fy=4)
+
+    plot_im = cv2.drawContours(color_image, locations, -1, (0,255,0), 5)  
+
+    cv2.imwrite('test.jpg', plot_im)
+
+    location_dict = {'X':[], 'Y':[]}
+
+    for l in locations:
+        M = cv2.moments(l)
+
+        x = int(M['m10']/M['m00'])
+        y = int(M['m01']/M['m00'])
+                
+        location_dict['X'].append(x)
+        location_dict['Y'].append(y)
+
+    data_locations = pd.DataFrame(location_dict)
+
+    return data_locations
+            </pre>
              
             <p> <b>Libraries</b>
             <ul>
@@ -27,6 +84,10 @@
                 <caption align="bottom">Detection of Ports</caption>
                 <tr><td><img src="shrinkage_analysis/plate_detection.png" alt="HTML5 Icon" style="width:100%;margin:auto;max-width:600px"> </td></tr>
             </table>  
+            
+            
+            
+            
             
             <p> <h3>Shrinkage Calculation Script</h3>
             <p>Using the csv position data from each image, the plate shrinkage was calculated.
@@ -54,5 +115,6 @@
                 <h1>Return to Formulatrix</h1>
             </section>
         </a>
+                
 	</body>
 </html>
