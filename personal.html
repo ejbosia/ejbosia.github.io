@@ -1,46 +1,43 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<title>Document</title>
-		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href=style.css>
+		<link rel="stylesheet" type="text/css" href="article.css">
 	</head> 
 	<body>
-		<nav id="navMenu"></nav>
-
-		<section>
-			<article>
-				<p><h1>Personal Projects</h1>
-				<div class = "responsive">
-					<div class="gallery">
-					  <a target="_blank" href="personal/printer.html">
-						<img src="images/printer_square.jpg" alt="HTML 5.0" width="300" height="300" class="large">
-					  </a>
-					  <div class="desc"><p>3D Printer</div>
-					</div>
-				</div>
-				<div class = "responsive">
-					<div class="gallery">
-					  <a target="_blank" href="personal/drone.html">
-						<img src="images/drone_square.JPG" alt="HTML 5.0" width="300" height="300" class="large">
-					  </a>
-					  <div class="desc"><p>Racing Drone</div>
-					</div>
-				</div>
-				<div class = "responsive">
-					<div class="gallery">
-					  <a target="_blank" href="personal/arduino.html">
-						<img src="images/arduino_square.JPG" alt="HTML 5.0" width="300" height="300" class="large">
-					  </a>
-					  <div class="desc"><p>Arduino Projects</div>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-			</article>
-		</section>
-		
-		<script src="script.js"></script>
-
+        <div class="header">
+            <h1>Evan Bosia</h1>
+        </div>
+        
+        <div class="topnav">
+          <a href="index.html">Home</a>
+          <a href="formulatrix.html">Formulatrix</a>
+          <a href="school.html">WPI</a>
+          <a href="internship.html">Internships</a>
+          <a href="personal.html">Personal</a>
+        </div>
+        
+        <div class="article">
+            <h2>NHL Machine Learning Statistics</h2>
+            <p>I am currently working on using machine learning to analyze and predict NHL statistics. At work we have a fantasy hockey league so hopefully I can gain an edge using this. All of the statistics are pulled directly from the NHL api. I am using python with pandas and jupyter to manipulate the statistics.</p>
+            <img src="personal/goals-prediction.png" alt="Goals predicition vs actual" class="img">
+            <p>The image above shows the prediction of standardized goals vs actual goals for the 2018-2019 season in the NHL.
+        </div>
+        
+        <div class="article">
+            <h2>Tevo Tarantula 3D printer</h2>
+            <p>I have a Tevo Tarantula 3D printer that has mostly worked in the past. I have printed different models, as well as a fix for a broken camera tripod.</p>
+            <img src="personal/printer_large.jpg" alt="Goals predicition vs actual" class="img">
+        </div>
+        
+        <div class="article">
+            <h2>This Website</h2>
+            <p> I put too much time into this website. I built it from scratch with HTML and CSS</p>
+        </div>
+        
+        <a class="normal_link" href="index.html">
+            <section class="footer">
+                <h1>Return to Home</h1>
+            </section>
+        </a>
 	</body>
 </html>

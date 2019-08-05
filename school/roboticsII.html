@@ -4,43 +4,46 @@
 		<meta charset="UTF-8">
 		<title>Document</title>
 		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href=style.css>
+		<link rel="stylesheet" type="text/css" href=article.css>
 	</head> 
 	<body>	
-		<nav id="navMenu"></nav>
+        <section class = "header">
+            <h1>Unified Robotics II</h1>
+        </section>
+		<section class = "article">
+            
+            <p>March 2015 - May 2015
+            
+            <img src="RBE2002\model.PNG" alt="HTML5 Icon" style="width:500;height:500;"> 
+            
+            <p>The final project of Unified Robotics II consisted of navigating a maze and putting out a candle autonomously. My main responsibility for the project was to work on the mechanical systems. This included designing the drive system, determining sensors and sensor placement, and coming up with the method of moving the fan. I used SolidWorks to design the entire robot, with the custom pieces lasercut out of birch.
 
-		<section class = "Tight">
-			<article>
-				<p><h1>Unified Robotics II</h1>
-				<p>March 2015 - May 2015
-				
-				<img src="RBE2002\model.PNG" alt="HTML5 Icon" style="width:500;height:500;"> 
-				
-				<p>The final project of Unified Robotics II consisted of navigating a maze and putting out a candle autonomously. My main responsibility for the project was to work on the mechanical systems. This included designing the drive system, determining sensors and sensor placement, and coming up with the method of moving the fan. I used SolidWorks to design the entire robot, with the custom pieces lasercut out of birch.
-
-				<table align = "center">
-					<caption align="bottom">Lasercut Frame</caption>
-					<tr><td><img src="RBE2002\laser_cut.png" alt="HTML5 Icon" style="width:500;height:500;"> </td></tr>
-				</table>
-				
-				<p>One key aspect of the problem was the location of the flame must be displayed, measured from a starting location. To solve this problem, I decided to use a holonomic drive coupled with encoders to measure distance. This drive configuration is shown below. Because the maze was all right angles, the robot could navigate the right-angled maze without turning. We ran into some contact issues with the wheels because the maze surface was uneven, but we were able to partially correct the slipping by running a PID control loop on the comparison of the encoder ticks between each drive wheel. Because the robot only ever traveled straight, the ticks should have always been equal.
-				
-				<table align = "center">
-					<caption align="bottom">Holonomic Wheelbase</caption>
-					<tr><td><img src="RBE2002\wheelbase.png" alt="HTML5 Icon" style="width:500;height:500;"> </td></tr>
-				</table>
-				
-				<p>Aside from working on the mechanical components of the robot, I also  created the high-level logic for the autonomous program. To control the robot, I used essentially a large switch statement with enumerated states. The figure below shows a snippet of C code used to control the robot autonomously. Each case has a list of function it calls in order to execute the program.
-				
-				<table align = "center">
-					<caption align="bottom">Code Snippet of State Driven Robot Logic</caption>
-					<tr><td><img src="RBE2002\states.PNG" alt="HTML5 Icon" style="width:500;height:500;"> </td></tr>
-				</table>
-				
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/BdYc1vcrSZA" frameborder="0" allowfullscreen></iframe>
-				</article>
+            <table align = "center">
+                <caption align="bottom">Lasercut Frame</caption>
+                <tr><td><img src="RBE2002\laser_cut.png" alt="HTML5 Icon" style="width:500;height:500;"> </td></tr>
+            </table>
+            
+            <p>One key aspect of the problem was the location of the flame must be displayed, measured from a starting location. To solve this problem, I decided to use a holonomic drive coupled with encoders to measure distance. This drive configuration is shown below. Because the maze was all right angles, the robot could navigate the right-angled maze without turning. We ran into some contact issues with the wheels because the maze surface was uneven, but we were able to partially correct the slipping by running a PID control loop on the comparison of the encoder ticks between each drive wheel. Because the robot only ever traveled straight, the ticks should have always been equal.
+            
+            <table align = "center">
+                <caption align="bottom">Holonomic Wheelbase</caption>
+                <tr><td><img src="RBE2002\wheelbase.png" alt="HTML5 Icon" style="width:500;height:500;"> </td></tr>
+            </table>
+            
+            <p>Aside from working on the mechanical components of the robot, I also  created the high-level logic for the autonomous program. To control the robot, I used essentially a large switch statement with enumerated states. The figure below shows a snippet of C code used to control the robot autonomously. Each case has a list of function it calls in order to execute the program.
+            
+            <table align = "center">
+                <caption align="bottom">Code Snippet of State Driven Robot Logic</caption>
+                <tr><td><img src="RBE2002\states.PNG" alt="HTML5 Icon" style="width:500;height:500;"> </td></tr>
+            </table>
+            
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/BdYc1vcrSZA" frameborder="0" allowfullscreen></iframe>
 		</section>
 		
-		<script src="script.js"></script>
+        <a class="normal_link" href="../school.html">
+            <div class = "footer">
+                <h1>Return to WPI Projects</h1>
+            </div>
+        </a>
 	</body>
 </html>

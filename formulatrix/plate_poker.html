@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="../article.css">
+	</head> 
+	<body>	
+        <section class = "header">
+            <h1>Plate Poker</h1>
+        </section>
+        
+		<section class = "article">            
+            <img src="plate_poker/ui.png" alt="UI Image" style="width:50%;height:50%;margin:auto"> 
+             
+            <p> One of the production steps for making dPCR microplates is poking 0.5mm diameter holes in the plate. This was at the time the most time consuming part of the process. The microfluidics are on one side of the plate, and the input wells are on the other side of the plate. With the expected increase in production with the release of the Constellation, an automated system was desired to avoid having a production team poking plates.
+             
+            <p> <h3>Goals:</h3>
+            <ul>
+                <li>Handle 24 well and 96 well plate formats</li>
+                <li>Poke 200 plates in a work shift</li>
+                <li>Handle plates that are not uniform due to molding challenges</li>
+            </ul>
+                       
+            <p> There was an existing automated plate poker setup. This was built off of one of our imaging instruments. The problems here were that is was slow and unreliable, but it was a good place to start. The strategy of this poker was to use a mounted camera to locate the corner wells of the plate. Once the corners had been located, the rest of the locations could be interpolated under the assumption that the poking locations would be located linearly between the corners. After generating a map of the poking locations, the poker would apply an offset to align the poking mechanism above the poke-locations.
+            
+            <p> Instead of making a new instrument we chose to retrofit the original Constellation to serve this purpose. The instrument was already set up with a plate seat, two axis movement, and a camera already set up.
+            
+            <p> <b>Program</b>
+            <p> The software challenge of the instrument was moving the code from the old plate poker to the new instrument. The old instrument was controlled by CAN, and the new poker through our own control board.         
+            
+            <p> To get the motor control function to work, I took the code of our terminal program used for controlling our boards. I then cut out all of the functionality that was unneeded by the plate poker programs.
+            
+            <p> <b>Features:</b>
+            <ul>
+                <li>Dynamic location targeting of poking locations</li>
+                <li>Ability to handle different plate types</li>
+                <li>Ability to change locating positions</li>
+                <li>Image based offset calibration</li>
+                <li>XML configuration files</li>
+                <li>Configuration file editing through the software</li>
+                <li>Cancellation</li>
+                <li>Realtime progress bar</li>
+                <li>Ability to make custom poking locations (for fun mostly)</li>
+            </ul>
+        </section>
+        
+        
+        <a class="normal_link" href="../formulatrix.html">
+            <section class="footer">
+                <h1>Return to Formulatrix</h1>
+            </section>
+        </a>
+	</body>
+</html>
