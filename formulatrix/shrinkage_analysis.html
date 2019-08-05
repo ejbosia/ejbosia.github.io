@@ -11,8 +11,7 @@
         </section>
         
 		<section class = "article">            
-            
-             
+
              <p> As part of the R&D process we aimed to determine the shrinkage rate of the plates after injection molding. Despite this project not working as expected, there are some interesting things I did to try to get it to work. The code was written in Python, using jupyter as a quick prototyping tool.
              
             <pre  class="prettyprint">
@@ -46,16 +45,16 @@ def size_detector(image_location, threshold=100):
             locations.append(contour)
 
     print("Number of contours:", len(locations))
-    # read image for contours plot
+    
+    # output an image showing the contours located
     color_image = cv2.imread(image_location)
     color_image = cv2.resize(color_image, None, fx=4, fy=4)
-
     plot_im = cv2.drawContours(color_image, locations, -1, (0,255,0), 5)  
-
     cv2.imwrite('test.jpg', plot_im)
 
-    location_dict = {'X':[], 'Y':[]}
+    location_dict = {'X':[], 'Y':[]}    # dictionary to store the X and Y locations of the contour centroids
 
+    # store the centroid X and Y locations to matching lists
     for l in locations:
         M = cv2.moments(l)
 
@@ -65,8 +64,10 @@ def size_detector(image_location, threshold=100):
         location_dict['X'].append(x)
         location_dict['Y'].append(y)
 
+    # convert the dictionary of X and Y locations to a dataframe
     data_locations = pd.DataFrame(location_dict)
 
+    # return a dataframe of the X and Y locations
     return data_locations
             </pre>
              
@@ -80,33 +81,16 @@ def size_detector(image_location, threshold=100):
             <p> <h3>Port Identification Script</h3>
             <p>The port identification script found the contours of the backlit holes in the plate, then determined the contour characterstics of the points. The holes were also identified based on their position in the image. All of this data was saved to a csv file using Pandas.
             
-            <table class="img">
-                <caption align="bottom">Detection of Ports</caption>
-                <tr><td><img src="shrinkage_analysis/plate_detection.png" alt="HTML5 Icon" style="width:100%;margin:auto;max-width:600px"> </td></tr>
-            </table>  
-            
-            
-            
-            
+            <tr><td><img src="shrinkage_analysis/plate_detection.png" alt="HTML5 Icon" class = "img">
             
             <p> <h3>Shrinkage Calculation Script</h3>
             <p>Using the csv position data from each image, the plate shrinkage was calculated.
             
-            <table class="img">
-                <caption align="bottom">Map of Shrinkage Magnitude</caption>
-                <tr><td><img src="shrinkage_analysis/shrinkage_map.png" alt="HTML5 Icon" style="width:100%;margin:auto;max-width:600px"></td></tr>
-            </table>            
+            <img src="shrinkage_analysis/shrinkage_map.png" alt="HTML5 Icon" class = "img">         
             
-            <table class="img">
-                <caption align="bottom">Map of Shrinkage Direction</caption>
-                <tr><td><img src="shrinkage_analysis/direction_map.png" alt="HTML5 Icon" style="width:100%;margin:auto;max-width:600px"></td></tr>
-            </table>
+            <p> I was also able to calculate the direction of the shrinkage on the plate. The shrinkage direction had a rotational element to it so this graph is showing a angle corrected version of the vectors. I used a rotational matrix to correct the plate rotation.
+            <img src="shrinkage_analysis/direction_map.png" alt="HTML5 Icon" class = "img">
           
-
-            <table class="img">
-                <caption align="bottom">Example code from form</caption>
-                <tr><td><img src="cc_U.png" alt="Code snippet" style="width:600;height:600;"> </td></tr>
-            </table>
         </section>
         
         

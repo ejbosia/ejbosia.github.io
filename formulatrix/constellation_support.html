@@ -2,6 +2,8 @@
 <html lang="en">
 	<head>
 		<link rel="stylesheet" type="text/css" href="../article.css">
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=python&amp"></script>
+
 	</head> 
 	<body>	
         <section class = "header">
@@ -13,6 +15,43 @@
             
             <p> <h3>Error Log Programs</h3>
             <p> To help in this role I created a few scripts to help deal with the messy error logs created by our software. All of these programs were written in Python.
+            
+            <pre class = "prettyprint">
+# parse the log without looking at which thermocycler is which
+def parse_log_simple(log):
+    
+    target = 0  # saves if the previous line is for the target
+    length = 0  # saves the length of the parsed file (debug output)
+    
+    # read the lines of the log file
+    f = open(log,"r")
+    lines = f.readlines()
+    f.close()
+    
+    # print the initial number of lines in the log file (debug output)
+    print("INITIAL # OF LINES: ", len(lines))
+    
+    # list of dictionaries containing the interesting data
+    data = []
+    
+    # iterate through the lines to find the lines of interest
+    for line in lines:
+        if "V2ThermoCycler_0" in line:
+            target = 0
+        elif "V2ThermoCycler_1" in line:
+            target = 1
+        if "Current temperature" in line:
+            data.append({**parse_line_data(line), **{"TC":target}})
+            length += 1
+            
+    # print the final number of lines (debug output)        
+    print("FINAL # OF LINES: ", length)
+
+    # save dictionary of results to dataframe and return
+    data = pd.DataFrame(data)
+    data.set_index(['INFO','TIME'],inplace=True)    
+    return data </pre>
+            
         </section>
         
         <a class="normal_link" href="../formulatrix.html">
