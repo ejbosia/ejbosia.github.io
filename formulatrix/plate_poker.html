@@ -12,7 +12,7 @@
 		<section class = "article">            
             <img src="plate_poker/ui.png" alt="UI Image" class="img"> 
              
-            <p> One of the production steps for making dPCR microplates is poking 0.5mm diameter holes in the plate. This was at the time the most time consuming part of the process. The microfluidics are on one side of the plate, and the input wells are on the other side of the plate. With the expected increase in production with the release of the Constellation, an automated system was desired to avoid having a production team poking plates.
+            <p> One of the production steps for making dPCR microplates is poking 0.5mm diameter holes in the plate. This was at the time the most time consuming part of the process, as each plate could require up to 192 holes to be poked. With the expected increase in production with the release of the Constellation, an automated system was desired to avoid having a production team poking plates.
              
             <p> <h3>Goals:</h3>
             <ul>
@@ -21,12 +21,14 @@
                 <li>Handle plates that are not uniform due to molding challenges</li>
             </ul>
                        
-            <p> There was an existing automated plate poker setup. This was built off of one of our imaging instruments. The problems here were that is was slow and unreliable, but it was a good place to start. The strategy of this poker was to use a mounted camera to locate the corner wells of the plate. Once the corners had been located, the rest of the locations could be interpolated under the assumption that the poking locations would be located linearly between the corners. After generating a map of the poking locations, the poker would apply an offset to align the poking mechanism above the poke-locations.
+            <p> With the goals in mind, we decided the strategy of the poker was to use a mounted camera to locate the corner wells of the plate. Once the corners had been located, the rest of the locations could be interpolated or extrapolated under the assumption that the poking locations would be located linearly between the corners. The poker could then iterate through the map of locations and poke each hole.
             
-            <p> Instead of making a new instrument we chose to retrofit the original Constellation to serve this purpose. The instrument was already set up with a plate seat, two axis movement, and a camera already set up.
+            
+            <p> <b>Instrument</b>
+            <p> Instead of making a new instrument, we chose to retrofit an old imaging instrument. The instrument was already set up with a plate seat, two axis movement, a camera, and a full electronics board. I added a pneumatic cylinder with a needle to the end of the XY stage. My coworker helped with the machining of the bracket to hold the cylinder. I wired the solenoid controlling the pneumatics to a stepper driver on the board. Because the driver was current controlled, I could send a current to the solenoid to open it by moving the "stepper motor" one step.
             
             <p> <b>Program</b>
-            <p> The software challenge of the instrument was moving the code from the old plate poker to the new instrument. The old instrument was controlled by CAN, and the new poker through our own control board. To get the motor control function to work, I took the code of our terminal program used for controlling our boards. I then cut out all of the functionality that was unneeded by the plate poker programs, and added code to run the poking operations.
+            <p> The software challenge of the instrument was moving the code from the old plate poker to the new instrument. The old instrument was controlled by CAN, and the new poker through our own control board. To get the motor control function to work, I took the code of our terminal program used for controlling our boards which was written in C#. I then cut out all of the functionality that was unneeded by the plate poker programs, and added code to run the poking operations.
             
             <pre class = "prettyprint">
 //Pokes all holes
@@ -85,6 +87,10 @@ The program uses the <code class = "prettyprint">System.ComponentModel.Backgroun
             </ul>
         </section>
         
+        <p> <b>Outcome</b>
+            
+        <p> The final poking time was 90 seconds, brought down from 10 minutes when done manually. We currently have three of the poking instruments in production, and thousands of plates have been processed using the tool.
+       
         
         <a class="normal_link" href="../formulatrix.html">
             <section class="footer">
