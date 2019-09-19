@@ -27,6 +27,8 @@
             <p> <b>Instrument</b>
             <p> Instead of making a new instrument, we chose to retrofit an old imaging instrument. The instrument was already set up with a plate seat, two axis movement, a camera, and a full electronics board. I added a pneumatic cylinder with a needle to the end of the XY stage. My coworker helped with the machining of the bracket to hold the cylinder. I wired the solenoid controlling the pneumatics to a stepper driver on the board. Because the driver was current controlled, I could send a current to the solenoid to open it by moving the "stepper motor" one step.
             
+            <img src="plate_poker/poker_camera.PNG" alt="Poker Camera" class="img">
+            
             <p> <b>Program</b>
             <p> The software challenge of the instrument was moving the code from the old plate poker to the new instrument. The old instrument was controlled by CAN, and the new poker through our own control board. To get the motor control function to work, I took the code of our terminal program used for controlling our boards which was written in C#. I then cut out all of the functionality that was unneeded by the plate poker programs, and added code to run the poking operations.
             
@@ -90,6 +92,7 @@ The program uses the <code class = "prettyprint">System.ComponentModel.Backgroun
             
             <p> The final poking time was 90 seconds, brought down from 10 minutes when done manually. We currently have three of the poking instruments in production, and thousands of plates have been processed using the tool.</p> 
             
+            <!--video controls="controls" width="800" height="600" name="Poking" src="plate_poker/poker.MOV"></video-->
             
         </section>
       
