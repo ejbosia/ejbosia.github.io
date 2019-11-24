@@ -86,7 +86,7 @@ img {
     margin-top: 20px;
     background-color: white;
     padding: 20px;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 /* centering for an image */
@@ -204,8 +204,8 @@ img {
 .gallery {
     padding: 0 20px;
     float: left;
-    width: 33.332%;        
-	margin: 20px 0;
+    width: 33.32%;        
+    margin: 20px 0;
 }
 
 .bucket {
