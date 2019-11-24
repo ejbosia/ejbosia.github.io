@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="../article.css">
+	</head> 
+	<body>	
+        <section class = "header">
+            <h1>Fast Thermal Cycler</h1>
+        </section>
+        
+		<section class = "article">            
+             
+            <img src="fast_TC/instrument.png" alt="instrument" class="img"> 
+             
+            dPCR requires the sample to be heated and cooled between two temperatures, often around 95 and 60C, to denature and anneal the DNA. The Constellation can ramp between the temperatures in about seven seconds, but we were curious how PCR would be affected by ultra-fast ramp rates.
+
+
+            <h3>Brainstorming</h3>
+            <p> The easiest way to create something quickly is to use something that already exists. We had a linear dPCR instrument from R&D that was sitting unused in the lab, so this seemed like a great place to start. On the instrument, there were linear rails, a heat block, a plate holder, and a clamping mechanism. The linear motion in the instrument was driven by lead screws, so to hit the desired time specs the actuation method was going to change. Another heat block was also necessary to add to the instrument. </p>
+
+            <p> The first thing I tried was changing the Y axis to a timing belt. I 3D printed a motor bracket and an idler bracket to quickly test this. After having the belt skip horribly trying to accelerate fast enough (the clamp weight was a lot), I decided to switch to a pneumatic cylinder to drive the Y motion. The instrument only needed to change between two positions, so this seemed like the fastest way to move. Making the clamping motion also driven by pneumatics seemed intuitive because speed and force were the two important factors. Everything could then be controlled by solenoids and relays making it easy enough to do on an Arduino. </p>
+
+            <h3>Prototyping</h3>
+            <p> I used 3D printing for the pneumatics components because it was easy to make the custom brackets needed to hold the cylinders. I also 3D printed a mounting bracket for the bank of solenoids used to control each motion. To make the second heat block, I machined one out of aluminum with structure to raise the height to match the existing heat block. Because the block only needed to hold one temperature, a cheap relay-temperature controller and some 40 watt 3D printer heater cartridges was used. For control of the pneumatics, I used an arduino and a relay hat.
+            </p>
+
+            <h3>Results</h3>
+            <p> The fast thermal cycler can change heat blocks in less than a second. It needs to be clamped down because of how fast it can move the Y axis.
+            </p>
+
+        </section>
+        
+        
+        <a class="normal_link" href="../formulatrix.html">
+            <section class="footer">
+                <h1>Return to Formulatrix</h1>
+            </section>
+        </a>
+	</body>
+</html>
