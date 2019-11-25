@@ -9,11 +9,11 @@
         </section>
         
 		<section class = "article">            
-                     
+
             Plate based dPCR relies on the assumption that there is a random distribution of positives. Areas of low amplification can be attributed to temperature issues, and areas of overly high concentration can be attributed to improper sealing. Improper sealing of the partitions causes streaks of partitions. The idea with this script is that the quality of the image can be determined by examining streaks vs the expected probability of these streaks.
 
             <h3>Determing Probabilities</h3>
-            <p> The probability of streaks is dependent on the probabilty that a given partition is negative (p0). This is similar to the successive coin flip problem, but there is a defined start and stop in each row. Streaks can start and stop anywhere in the row. To find the expected amount of streaks, I simulated 10000 trials of different p0 values. The output of this simulation was a lookup table of the p0 value and the expected breakdown of different streak lengths.</p>
+            <p> The probability of streaks is dependent on the probabilty that a given partition is negative (p0). This is similar to the successive coin flip problem, but there is a defined start and stop in each row. Streaks can start and stop anywhere in the row. To find the expected amount of streaks, I simulated 10000 trials of different p0 values (maybe not enough but close enough). The output of this simulation was a lookup table of the p0 value and the expected breakdown of different streak lengths.</p>
             
             <h3>Initial Methods</h3>
 
