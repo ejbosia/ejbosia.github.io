@@ -19,13 +19,13 @@
             <p> I chose a variation of the image segmentation method for the result processor. Originally, the program was using watershed segmentation to find the partitions, then thresholding and finding the contours. This worked very well, but the brightness measurment was slow because every contour was creating a mask of the image. Changing this method to taking a slice of the image using a bounding rectangle of each contour drastically increased the speed.
             </p>
 
-            <img src="result_processor/watershed/004_unknown.png" alt="Unknown" class="img">
+            <img src="result_processor/watershed/004_unknown.PNG" alt="Unknown" class="img">
             <br>
 
-	        <img src="result_processor/contours/005_adj_contour.png" alt="Contour" class="img">
+	        <img src="result_processor/contours/005_adj_contour.PNG" alt="Contour" class="img">
 
             <br>
-            <img src="result_processor/contours/well_pixelmap.png" alt="Pixelmap" class="img">
+            <img src="result_processor/contours/well_pixelmap.PNG" alt="Pixelmap" class="img">
 
             <h3>Results</h3>
             <p> The results of the algorithm are very accurate. The algorithm does not consider dust and is able to cut out unfilled partitions and noise well. Automatic thresholding seems to work when the partitions are roughly split into two brightness groups. The results are output as csv files using Pandas. Part of what helps the results is taking the brightness gradient from the LED to normalize the result images. The imaging module in the instrument does not have a flat brightness field, causing some areas to be repeatively brighter or darker. Normalizing the result images to this brightness gradient to create a "flat field" drastically improves the results.
