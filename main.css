@@ -206,12 +206,18 @@ img {
     float: left;
     width: 33.32%;        
     margin: 20px 0;
+    display: none;
+}
+
+.show {
+  display: block;
 }
 
 .bucket {
     border: 2px solid #FFF;
     background-color: white;
 }
+
 
 .bucket:hover {
     border: 2px solid #000;

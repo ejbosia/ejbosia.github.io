@@ -2,20 +2,7 @@
 <html lang="en">
 
 <style>
-    .filterDiv {
-        float: left;
-        background-color: #2196F3;
-        color: #ffffff;
-        width: 100px;
-        line-height: 100px;
-        text-align: center;
-        margin: 2px;
-        display: none;
-    }
 
-    .show {
-        display: block;
-    }
     .container {
         margin-top: 20px;
         overflow: hidden;
@@ -70,18 +57,85 @@
 </div>
 
 <div class="container">
-    <div class="filterDiv formulatrix opencv">Result</div>
-    <div class="filterDiv formulatrix opencv">Plate poker</div>
-    <div class="filterDiv formulatrix">Constellation</div>
-    <div class="filterDiv opencv">Stupid slicer</div>
-    <div class="filterDiv hiking">Hiking</div>
+    <div class = "gallery">
+        <a class="normal_link" href="formulatrix/result_processor.html">
+            <div class="bucket">
+                <img src="formulatrix/result_processor/preview.png" style="width:100%">
+                <div class="desc"> Result Processor </div>
+            </div>
+        </a>
+    </div>
+
+    <div class = "gallery">
+        <a class="normal_link" href="formulatrix/fast_TC.html">
+            <div class="bucket">
+                <img src="formulatrix/fast_TC/preview.jpg" style="width:100%">
+                <div class="desc"> Fast Thermal Cycler </div>
+            </div>
+        </a>
+    </div>
+
+    <div class = "gallery">
+        <a class="normal_link" href="formulatrix/image_quality.html">
+            <div class="bucket">
+                <img src="formulatrix/image_quality/preview.PNG" style="width:100%">
+                <div class="desc"> Image Quality </div>
+            </div>
+        </a>
+    </div>
+
+    <div class = "gallery">
+        <a class="normal_link" href="formulatrix/constellation_support.html">
+            <div class="bucket">
+                <img src="formulatrix/support/preview.png" style="width:100%">
+                <div class="desc"> Constellation Support </div>
+            </div>
+        </a>
+    </div>
+
+    <div class = "gallery">
+        <a class="normal_link" href="formulatrix/plate_poker.html">
+            <div class="bucket">
+                <img src="formulatrix/plate_poker/preview.PNG" style="width:100%">
+                <div class="desc"> Plate Perforator </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a class="normal_link" href="formulatrix/dust_detection.html">
+            <div class = "bucket">
+                <img src="formulatrix/dust_detection/preview.png" style="width:100%">
+                <div class="desc"> Dust Detection </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a class="normal_link" href="formulatrix/shrinkage_analysis.html">
+            <div class="bucket">
+                <img src="formulatrix/shrinkage_analysis/preview.png" style="width:100%">
+                <div class="desc"> Shrinkage Analysis </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="gallery">
+        <a class="normal_link" href="formulatrix/temperature_measurement.html">
+            <div class="bucket">
+                <img src="formulatrix/temperature_measurement/preview.png" style="width:100%">
+                <div class="desc"> Temperature Measurement </div>
+            </div>
+        </a>
+    </div>
+</div>
 </div>
 
 <script>
     filterSelection("all")
     function filterSelection(c) {
         var x, i;
-        x = document.getElementsByClassName("filterDiv");
+        x = document.getElementsByClassName("gallery");
         if (c == "all") c = "";
         for (i = 0; i < x.length; i++) {
             w3RemoveClass(x[i], "show");
@@ -121,8 +175,5 @@
         });
     }
 </script>
-
-
-
 </body>
 </html>
