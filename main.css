@@ -204,7 +204,7 @@ img {
 .gallery {
     padding: 0 20px;
     float: left;
-    width: 33.32%;        
+    width: 24.99%;
     margin: 20px 0;
     display: none;
 }
@@ -252,7 +252,7 @@ a.normal_link{
       width:100%;
   }
   .gallery{
-      width:49.999%;
+      width:33.32%;
   }
 }
 
