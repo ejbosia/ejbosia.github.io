@@ -52,6 +52,7 @@ img {
 
 /* Footer */
 .footer {
+  background-color: #666666;
   padding: 20px;
   text-align: center;
   margin-top: 20px;
@@ -63,7 +64,6 @@ img {
     text-align: left;
     margin: auto;
     margin-top: 20px;
-    background-color: white;
     padding: 20px;
     overflow: hidden;
 }
@@ -127,7 +127,7 @@ img {
 }
 
 a.normal_link{
-    color:black;
+    color:white;
     text-decoration:none;
 }
 
