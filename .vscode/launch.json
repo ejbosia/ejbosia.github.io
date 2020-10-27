@@ -8,8 +8,7 @@
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "C:\\Users\\ejbos\\Documents\\GitHub\\ejbosia.github.io\\index.html",
-            "webRoot": "${workspaceFolder}"
+            "file": "C:\\Users\\ejbos\\Documents\\GitHub\\ejbosia.github.io\\index.html",
         }
     ]
 }
