@@ -209,12 +209,30 @@ CSS for social media links on homepage
   color: white;
 }
 
-/* Linked */
+/* Linkedin */
 .fa-linkedin {
   background: #0077B5;
   color: white;
 } 
 
+
+
+/* 
+Project Post formatting 
+*/
+.project_post{
+  border-color: #FFFFFF;
+  align-items:center;
+  padding:10px;
+  margin:auto;
+  overflow:hidden;
+  width: 1000px;
+  display: none;
+}
+
+.show {
+  display: flex;
+}
 
 
 
@@ -236,6 +254,9 @@ CSS for social media links on homepage
       width:33.32%;
   }
   .container_logo{
+    width:100%;
+  }
+  .project_post{
     width:100%;
   }
 }

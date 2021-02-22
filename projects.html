@@ -28,8 +28,6 @@
     }
 </style>
 
-
-
 <head>
     <meta charset="UTF-8">
     <title>Projects</title>
@@ -48,13 +46,34 @@
         <p>Below is an aggregate list of projects I've worked on. There are a wide variety of focus areas, so use the filtering buttons to narrow the search.</p>
     </section>
 
-
     <div id="myBtnContainer" class = "container">
         <button class="btn active" onclick="filterSelection('all')" >All</button>
         <button class="btn" onclick="filterSelection('opencv')" >OpenCV</button>
     </div>
 
-    <div class="container">
+
+    <section class = "container">
+
+        <section class = "project_post opencv">
+            <!--embed src="penrose2.svg" class="rotate" style = "vertical-align:middle; padding:20px;"></embed-->
+            <image src="formulatrix/result_processor/preview.png" style =  "width:25%; padding:20px;"></image>
+            <span><p><b>Result Processor: </b>Python: <i>OpenCV, Numpy, Pandas</i></p>
+            <p>The goal of the project was to calculate dPCR concentrations from a grid of fluorescent droplets.</p>
+            <p><b>Results: </b></p></span>
+          </section>
+
+          <section class = "project_post mechanical">
+            <!--embed src="penrose2.svg" class="rotate" style = "vertical-align:middle; padding:20px;"></embed-->
+            <image src="formulatrix/fast_TC/preview.jpg" style = "vertical-align:middle; width:25%; padding:20px;"></image>
+            <span><p><b>Fast Thermocycler: </b>Arduino, CAD, 3D Printing, CNC Machining</p>
+            <p>Fast plate thermocycler using pneumatics to move dPCR plates between two heatblocks.</p>
+            <p><b>Results: </b> G Block PCR amplification in 8 minutes.</p></span>
+          </section>
+
+
+    </section>
+
+    <!--div class="container">
         <div class = "gallery formulatrix opencv">
             <a class="normal_link" href="formulatrix/result_processor.html">
                 <div class="bucket">
@@ -159,7 +178,7 @@
                 </div>
             </a>
         </div>
-    </div>
+    </div-->
 
     <a class="normal_link" href="index.html">
         <section class="footer">
@@ -172,7 +191,7 @@
     filterSelection("all")
     function filterSelection(c) {
         var x, i;
-        x = document.getElementsByClassName("gallery");
+        x = document.getElementsByClassName("project_post");
         if (c == "all") c = "";
         for (i = 0; i < x.length; i++) {
             w3RemoveClass(x[i], "show");
