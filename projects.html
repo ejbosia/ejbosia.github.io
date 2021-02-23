@@ -36,85 +36,220 @@
 <body>
     <nav class="topnav">
         <li><logo>Evan Bosia </logo></li>
-        <li style="float:right"><a href="about.html">About</a></li>
         <li style="float:right"><a href="resume.html">Resume</a></li>
         <li style="float:right"><a href="projects.html">Projects</a></li>
         <li style="float:right"><a href="index.html">Home</a></li>   
     </nav>
 
-    <section>
-        <p>Below is an aggregate list of projects I've worked on. There are a wide variety of focus areas, so use the filtering buttons to narrow the search.</p>
-    </section>
+    <section class="article">
 
     <div id="myBtnContainer" class = "container">
         <button class="btn active" onclick="filterSelection('all')" >All</button>
         <button class="btn" onclick="filterSelection('opencv')" >OpenCV</button>
+        <button class="btn" onclick="filterSelection('ml')" >Machine Learning</button>
+        <button class="btn" onclick="filterSelection('R&D')" >R&D</button>
+
     </div>
+    </section>
+
+    <section class = "container_proj">
+        <section class = "project_post">
+            <image src="bu/distributed/preview.png" style =  "width:25%; padding:20px;"></image>
+            <span><p><b>RAFT implementation: </b> Go</p>
+            <p>Implemention of RAFT distributed state machine in Go.</p>
+            <p><b>Results: </b></p></span>
+        </section>
+    </section>
+
+    <section class = "container_proj">
+        <section class = "project_post">
+            <image src="personal/drawbot/preview.png" style =  "width:25%; padding:20px;"></image>
+            <span><p><b>drawbot-server</b></p>
+            <p>Flask server to allow uploads and remote control on the drawbot.</p>
+            <p><b>Results: </b></p></span>
+        </section>
+    </section>
+
+    <section class = "container_proj opencv R&D">
+        <section class = "project_post">
+            <image src="personal/drawbot/preview.png" style =  "width:25%; padding:20px;"></image>
+            <span><p><b>drawbot</b></p>
+            <p>The drawbot is a CNC drawing robot made out of an old 3D printer. Remote control on network using Flask.</p>
+            <p><b>Results: </b></p></span>
+        </section>
+    </section>
+
+    <section class = "container_proj">
+        <section class = "project_post">
+            <image src="bu/cs611/preview.png" style =  "width:25%; padding:20px;"></image>
+            <span><p><b> Legends: </b>Java, OOP</i> </p>
+            <p>Object oriented RPG style game, using the singleton, factory, object composition, inheritance...</p>
+            <p><b>Results: </b></p></span>
+        </section>
+    </section>
 
 
-    <section class = "container">
+    <section class = "container_proj">
+        <section class = "project_post">
+            <image src="bu/cs591l1/preview.png" style =  "width:25%; padding:20px;"></image>
+            <span><p><b>Tracing Distributed Actors: </b>Python: <i>Ray, Jaeger</i> </p>
+            <p>Set up distributed system on Mass Open Cloud using Ray, and traced the system using Jaeger.</p>
+            <p><b>Results: </b></p></span>
+        </section>
+    </section>
 
-        <section class = "project_post opencv">
-            <!--embed src="penrose2.svg" class="rotate" style = "vertical-align:middle; padding:20px;"></embed-->
+    <section class = "container_proj opencv">
+        <section class = "project_post">
             <image src="formulatrix/result_processor/preview.png" style =  "width:25%; padding:20px;"></image>
             <span><p><b>Result Processor: </b>Python: <i>OpenCV, Numpy, Pandas</i></p>
             <p>The goal of the project was to calculate dPCR concentrations from a grid of fluorescent droplets.</p>
             <p><b>Results: </b></p></span>
-          </section>
+        </section>
+    </section>
 
-          <section class = "project_post mechanical">
-            <!--embed src="penrose2.svg" class="rotate" style = "vertical-align:middle; padding:20px;"></embed-->
-            <image src="formulatrix/fast_TC/preview.jpg" style = "vertical-align:middle; width:25%; padding:20px;"></image>
+    <section class = "container_proj mechanical">
+        <section class = "project_post mechanical">
+            <image src="formulatrix/fast_TC/preview.jpg" style = "width:25%; padding:20px;"></image>
             <span><p><b>Fast Thermocycler: </b>Arduino, CAD, 3D Printing, CNC Machining</p>
             <p>Fast plate thermocycler using pneumatics to move dPCR plates between two heatblocks.</p>
             <p><b>Results: </b> G Block PCR amplification in 8 minutes.</p></span>
-          </section>
-
-
+        </section>
     </section>
+          
+    <section class = "container_proj opencv">
+          <section class = "project_post opencv">
+            <image src="formulatrix/image_quality/preview.PNG" style = "width:25%; padding:20px;"></image>
+            <span><p><b>Image Quality Analysis: </b>Python: <i>OpenCV, Numpy, Pandas</i></p>
+            <p>Analysis tool to determine the quality of PCR based on the probability of different "streaks" of positives at a concentration.</p>
+            <p><b>Results: </b></p></span>
+          </section>
+        </section>
+          
+        <section class = "container_proj opencv R&D">
+          <section class = "project_post">
+            <image src="formulatrix/plate_poker/preview.PNG" style = "width:25%; padding:20px;"></image>
+            <span><p><b>Plate Poker: </b>C#: <i>OOP, OpenCV</i>, CAD, CNC Machining, Electronics</p>
+            <p>Automated poking tool using OpenCV to detect poking locations, and old platform to actuate poking.</p>
+            <p><b>Results: </b> Production use: processed thousands of plates. Shortened manual poking time from 10 minutes "hands on" to 90 seconds "hands off"</p></span>
+          </section>
+        </section>
+          
+        <section class = "container_proj opencv ml">
+          <section class = "project_post">
+            <image src="formulatrix/dust_detection/preview.png" style = "width:25%; padding:20px;"></image>
+            <span><p><b>Dust Detection: </b>Python: <i>OpenCV, Numpy, Pandas, Scikit</i></p>
+            <p>Image analysis used for QC of dPCR plates.</p>
+            <p><b>Results: </b> </p></span>
+          </section>
+        </section>
+          
+        <section class = "container_proj opencv">
+          <section class = "project_post">
+            <image src="formulatrix/shrinkage_analysis/preview.png" style = "width:25%; padding:20px;"></image>
+            <span><p><b>Shrinkage Analysis: </b>Python: <i>OpenCV, Numpy, Pandas</i></p>
+            <p>Analyzing plate molding shrinkage using machine vision.</p>
+            <p><b>Results: </b> </p></span>
+          </section>
+        </section>
+          
+        <section class = "container_proj R&D">
+          <section class = "project_post">
+            <image src="formulatrix/temperature_measurement/preview.png" style = "width:25%; padding:20px;"></image>
+            <span><p><b>Temperature Measurement</b>Python: <i>Serial</i>, Arduino, Sensors</p>
+            <p>Measuring heatblock temperature using arduino and FLIR.</p>
+            <p><b>Results: </b></p></span>
+          </section>
+        </section>
+          
+        <section class = "container_proj">
+          <section class = "project_post">
+            <image src="school/MQP/preview.jpg" style = "width:25%; padding:20px;"></image>
+            <span><p><b>Major Qualifying Project</b>Matlab, Simulink, Arduino, Sensors</p>
+            <p>Active temperature controlled package for distribution of vaccines via drone.</p>
+            <p><b>Results: </b></p></span>
+          </section>
+        </section>
+          
+        <section class = "container_proj ROS">
+          <section class = "project_post">
+            <image src="school/RBE3002/preview.png" style = "width:25%; padding:20px;"></image>
+            <span><p><b>RBE 3002 Final Project</b> ROS, Python, A* search</p>
+            <p>Mapping algorithm using ROS and Python.</p>
+            <p><b>Results: </b></p></span>
+          </section>
+        </section>
+          
+        <section class = "container_proj">    
+          <section class = "project_post">
+            <image src="school/RBE3001/preview.jpg" style = "width:25%; padding:20px;"></image>
+            <span><p><b>RBE 3001 Final Project</b> C, Matlab, PID, kinematics</p>
+            <p>Controlling a 2-DOF arm using embedded microcontroller running different sensors and PID control. Positions calculated in realtime using inverse kinematics in Matlab.</p>
+            <p><b>Results: </b></p></span>
+          </section>
+        </section>
+
+          <section class = "container_proj ml">    
+            <section class = "project_post">
+              <image src="/personal/goals-prediction.PNG" style = "width:25%; padding:20px;"></image>
+              <span><p><b>NHL Machine Learning: </b>Python: <i>scikit-learn, Numpy, requests</i></p>
+              <p>Pulled NHL statistics from the NHL api and developed a prediction model for different statistical categories.</p>
+              <p><b>Results: </b></p></span>
+            </section>
+        </section>
+
+        <!--div class="article">
+            <h2>3D printing</h2>
+            <p>I enjoy 3D printing in my free time because it is a natural extension of mechanical engineering and robotics. I had a Tevo Tarantula to start, and recently put together a Prusa MK3s. I have been using the Prusa MK3s to improve the Tevo printer. </p>
+            <img src="personal/tevo-new.jpg" alt="3D printer" class="img">
+        </div>
+
+        <div class="article">
+            <h2>NHL Machine Learning Statistics</h2>
+            <p>I worked on using machine learning to analyze and predict NHL statistics. All of the statistics were pulled directly from the NHL API using Python. Jupyter Python with Pandas and scikit-learn were used to develop the model.</p>
+            <img src="personal/goals-prediction.PNG" alt="Goals predicition vs actual" class="img">
+            <p>The image above shows the prediction of goals per game vs actual goals per game for the 2018-2019 season in the NHL.
+        </div>
+
+        <div class="article">
+            <h2>This Website</h2>
+            <p> I built this website from scratch using HTML and CSS.</p>
+        </div-->
+
+
+    <!--div class = "gallery">
+        <a class="normal_link" href="internship/cable-cam.html">
+            <div class="bucket">
+                <img src="internship/cc_preview.png" style="width:100%">
+                <div class="desc"> Cable Cam </div>
+            </div>
+        </a>
+    </div>
+    <div class="gallery">
+        <a class="normal_link" href="internship/gimbal.html">
+            <div class = "bucket">
+                <img src="internship/g_preview.png" style="width:100%">
+                <div class="desc"> Custom Gimbal </div>
+            </div>
+        </a>
+    </div>
+    <div class="gallery">
+        <a class="normal_link" href="internship/vtx.html">
+            <div class="bucket">
+                <img src="internship/vtx_preview.JPG" style="width:100%">
+                <div class="desc"> VTX Casing </div>
+            </div>
+        </a>
+    </div--> 
+
 
     <!--div class="container">
-        <div class = "gallery formulatrix opencv">
-            <a class="normal_link" href="formulatrix/result_processor.html">
-                <div class="bucket">
-                    <img src="formulatrix/result_processor/preview.png" style="width:100%">
-                    <div class="desc"> Result Processor </div>
-                </div>
-            </a>
-        </div>
-
-        <div class = "gallery formulatrix">
-            <a class="normal_link" href="formulatrix/fast_TC.html">
-                <div class="bucket">
-                    <img src="formulatrix/fast_TC/preview.jpg" style="width:100%">
-                    <div class="desc"> Fast Thermal Cycler </div>
-                </div>
-            </a>
-        </div>
-
-        <div class = "gallery opencv">
-            <a class="normal_link" href="formulatrix/image_quality.html">
-                <div class="bucket">
-                    <img src="formulatrix/image_quality/preview.PNG" style="width:100%">
-                    <div class="desc"> Image Quality </div>
-                </div>
-            </a>
-        </div>
+    
 
         <div class = "gallery">
             <a class="normal_link" href="formulatrix/constellation_support.html">
                 <div class="bucket">
                     <img src="formulatrix/support/preview.png" style="width:100%">
                     <div class="desc"> Constellation Support </div>
-                </div>
-            </a>
-        </div>
-
-        <div class = "gallery opencv">
-            <a class="normal_link" href="formulatrix/plate_poker.html">
-                <div class="bucket">
-                    <img src="formulatrix/plate_poker/preview.PNG" style="width:100%">
-                    <div class="desc"> Plate Perforator </div>
                 </div>
             </a>
         </div>
@@ -191,7 +326,7 @@
     filterSelection("all")
     function filterSelection(c) {
         var x, i;
-        x = document.getElementsByClassName("project_post");
+        x = document.getElementsByClassName("container_proj");
         if (c == "all") c = "";
         for (i = 0; i < x.length; i++) {
             w3RemoveClass(x[i], "show");

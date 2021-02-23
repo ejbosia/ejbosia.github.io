@@ -107,10 +107,22 @@ img {
 
 
 .container{
-  display:block;
+  display: block;
   padding:10px;
   margin:auto;
   overflow:hidden;
+}
+
+.container_proj{
+  display: none;
+  padding:10px;
+  margin:auto;
+  overflow:hidden;
+  width: 950px;
+}
+
+.show {
+  display: flex;
 }
 
 
@@ -221,18 +233,16 @@ CSS for social media links on homepage
 Project Post formatting 
 */
 .project_post{
-  border-color: #FFFFFF;
+  background-color: #4077b3;
   align-items:center;
   padding:10px;
   margin:auto;
   overflow:hidden;
-  width: 1000px;
-  display: none;
-}
-
-.show {
+  width: 100%;
   display: flex;
 }
+
+
 
 
 
@@ -256,7 +266,7 @@ Project Post formatting
   .container_logo{
     width:100%;
   }
-  .project_post{
+  .container_proj{
     width:100%;
   }
 }
