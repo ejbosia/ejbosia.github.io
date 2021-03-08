@@ -142,51 +142,6 @@ body::-webkit-scrollbar { /* WebKit */
   text-align: center;
 }
 
-.gallery {
-    padding: 0 20px;
-    float: left;
-    width: 24.99%;
-    margin: 20px 0;
-    display: none;
-}
-
-.show {
-  display: block;
-}
-
-.bucket {
-    border: 2px solid #FFF;
-}
-
-.bucket:hover {
-    border: 2px solid #000;
-}
-
-.bucket img {
-    width: 100%;
-    height: auto;
-}
-
-.desc {
-    padding: 30px;
-    text-align: center;
-	font-size: 18px;
-}
-
-/* Add a card effect for articles */
-.card {
-  padding: 20px;
-  margin-top: 20px;
-  overflow:hidden;
-}
-
-/* Add a card effect for articles */
-.item {
-  padding: 5px;
-  padding-left: 20px;
-  overflow:hidden;
-}
-
 a.normal_link{
     color:white;
     text-decoration:none;
