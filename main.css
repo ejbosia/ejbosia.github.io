@@ -243,6 +243,11 @@ Project Post formatting
   display: flex;
 }
 
+.project_image{
+  width:200px;
+  padding: 20px;
+}
+
 
 /* .featured{
   background-color: #FFFFFF;
