@@ -31,7 +31,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Projects</title>
-    <link rel="stylesheet" type="text/css" href=main.css>
+    <link rel="stylesheet" type="text/css" href=style.css>
 </head>
 <body>
     <nav class="topnav">
@@ -55,6 +55,16 @@
         <button class="btn" onclick="filterSelection('R&D')" >R&D</button>
 
     </div>
+    </section>
+
+    
+    <section class = "container_proj software ml">
+        <section class = "project_post">
+            <image src="images/netflix.png" class = "project_image"></image>
+            <span><p><b>Netflix KDD Cup (2007): </b>Python: <i>Pandas, LightGBM</i></p>
+            <p>Trained gradient boosting classifier using LightGBM to attempt to predict if a user rated a movie. This required extensive feature engineering and training on the BU computing cluster.</p>
+            <p><b>Results: </b> RMSE=0.426 --> <i>Improvements could have been made to the feature engineering (heavily correlated) and the synthetic negative generation.</i></p></span>
+        </section>
     </section>
 
     <section class = "container_proj software">
@@ -181,8 +191,9 @@
           <section class = "project_post">
             <image src="images/dust_detection.png" class = "project_image"></image>
             <span><p><b>Dust Detection: </b>Python: <i>OpenCV, Numpy, Pandas, Scikit</i></p>
-            <p>Image analysis used for QC of dPCR plates. The statistics generated from image analysis were used to train a machine learning model to predict the "score" of the image.</p>
-            <p><b>Results: </b> </p></span>
+            <p>Image analysis used for QC of dPCR plates. The statistics generated from image analysis were used to train a machine learning model to predict the "score" of the image. Made coworkers suffer through labeling plate images for dust.
+            </p>
+            <p><b>Results: </b> Model training not selective enough to be useful. There were not enough "good" samples, the ratings were predicted "bad" on most samples.</p></span>
           </section>
         </section>
           
@@ -191,7 +202,8 @@
             <image src="images/shrinkage_analysis.png" class = "project_image"></image>
             <span><p><b>Shrinkage Analysis: </b>Python: <i>OpenCV, Numpy, Pandas</i></p>
             <p>Analyzed plate molding shrinkage using machine vision by measuring the change in distance between back-lit holes in plate.</p>
-          </section>
+            <p><b>Results: </b>Technique would work, the camera did not have the resolution to image the whole plate to get good results.</p></span>
+            </section>
         </section>
           
         <section class = "container_proj R&D">
@@ -199,6 +211,7 @@
             <image src="images/temp.png" class = "project_image"></image>
             <span><p><b>Temperature Measurement: </b>Python: <i>Serial, Pandas</i>, Arduino, Sensors</p>
             <p>Measured heatblock temperature using simple thermistor circuit and arduino. Data was sent over serial to Python for plotting and analysis.
+            <p><b>Results: </b> Surface temperature measurment was not accurate enough to get a meaningful, repeatable reading. </p></span>
           </section>
         </section>
           
@@ -240,7 +253,7 @@
               <image src="images/goals-prediction.PNG" class = "project_image"></image>
               <span><p><b>NHL Machine Learning: </b>Python: <i>scikit-learn, Numpy, requests</i></p>
               <p>Pulled NHL statistics from the NHL api and developed a prediction model for different statistical categories.</p>
-              <p><b>Results: </b></p></span>
+              <p><b>Results: </b>Came in third in fantasy hockey league</p></span>
             </section>
         </section>
 
