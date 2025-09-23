@@ -1,5 +1,25 @@
-*.log
+# Build and Release Folders
+bin/
+bin-debug/
+bin-release/
+[Oo]bj/ # FlashDevelop obj
+[Bb]in/ # FlashDevelop bin
 
-# IDE files
-/.idea
-/.vscode
+# Other files and folders
+.settings/
+.DS_Store
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
+
+# Hugo
+public/
+resources/_gen/
+
+hugo_stats.json
+.hugo_build.lock
+
+# Backup Files
