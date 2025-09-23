@@ -1,6 +1,8 @@
-# ejbosia.github.io
-Website portfolio
+# hugo-profile
 
-This is a portfolio website with an overview of the different projects I have worked on / am working on. Hosted on github pages:
+This relies on [Hugo](https://gohugo.io/) and `git`. The [Blowfish](https://blowfish.page/) theme is set up as a submodule. The submodule can be cloned by running:
 
-https://ejbosia.github.io/
+```bash
+git submodule update --init --recursive
+```
+The website can be built by running the `hugo` command.
