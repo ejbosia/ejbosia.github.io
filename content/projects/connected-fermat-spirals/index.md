@@ -1,6 +1,6 @@
 ---
 title: "Connected Fermat Spirals"
-date: 2025-12-15
+date: 2025-12-16
 description: "Connected Fermat Spirals"
 summary: "An implementation of the connected fermat spirals algorithm in Python."
 tags: ["python"]
@@ -9,7 +9,7 @@ draft: false
 
 # Introduction
 
-I originally worked on this at Boston University. Reading through the code again having worked professionally for a few years, there is a lot I would clean up. Refactoring this code is a good excuse to improve the readability / structure and try using tools like the uv package manager.
+I originally developed this project at Boston University. Reading through the code again having worked professionally for a few years, I found a lot I would clean up. Refactoring this code provided an opportunity to improve the readability and structure while using tools like the uv package manager.
 
 {{< github repo="ejbosia/connected-fermat-spirals" showThumbnail=false >}}
 
@@ -23,9 +23,9 @@ I originally worked on this at Boston University. Reading through the code again
 
 # Background
 
-The algorithm is defined the [Connected fermat spirals for layered fabrication](https://dl.acm.org/doi/10.1145/2897824.2925958) paper.
+The algorithm is defined in the [Connected fermat spirals for layered fabrication](https://dl.acm.org/doi/10.1145/2897824.2925958) paper.
 
-The basic idea is filling a shape with spirals often requires multiple, disjoint spirals. By doubling back on the spiral, the input and output to the spiral can be made to be the same location.
+Filling a shape with spirals often requires multiple, disjoint spirals. By doubling back on the spiral, the input and output to the spiral can be made to be the same location.
 
 {{< figure
     default=true
@@ -43,26 +43,38 @@ This can be inserted into the external spiral to create one continuous path.
     width="250"
     >}}
 
-# Changes from Original Code
+The code follows this pipeline to convert fill objects in an image with connected spirals.
 
-I needed to update the Python version, as the original code was targetting Python 3.8 which is EOL. I chose Python 3.12 as a target, but was able to quickly test Python 3.11 using `uv run --python 3.11`.
+{{< mermaid >}}
+graph LR;
+A[Image]-->B[Polygon];
+B-->C[Contours];
+C-->D[Spirals];
+D-->E[Connected Spirals]
+{{< /mermaid >}}
 
-The most major change was the inclusion of the `Node` class. I was able to use this for both storing the contour and spiral information. Both datatypes require parent-child relationships. This greatly cleaned up the code.
+The conversion to **Connected Spirals** requires parent-child relationships between each spiral, because each child spiral can only be connected to its parent. The **Contours** step defines the relationships. These steps all use the `Node` class to store this relationship information.
 
-I made a few "software engineering" changes to the code. These were focused on readability.
+# Updates from Original Code
 
- - Add docstrings to each file, class, and function.
- - Use type hints throughout the code.
- - Make variable and function names verbose.
- - Use guard clauses instead of nested if statements.
- - Limit the excessive comment use I had originally (*almost every line*) to only when needed.
+I needed to update the Python version, as the original code was targeting Python 3.8 which is end-of-life. I chose Python 3.12, but was able to quickly test Python 3.11 using `uv run --python 3.11`.
 
-By removing a lot of the bandaids that were holding the old project together, some of the bugs with spiral generation came back. I plan on solving those in a more stable way. The old project was prone to crashing...
+One significant change was the inclusion of the `Node` class, which represents a simple tree structure. I was able to use this for both storing the contour and spiral information. Both datatypes require parent-child relationships. This greatly cleaned up the code and allowed more-specific type annotations.
 
-*If you look at the center of Pikachu above, you can see an example of a crossing path.*
+I also made a few "software engineering" changes to the code. These were focused on readability.
 
-# Notes on UV / Windsurf
+ - Added docstrings to each file, class, and function.
+ - Used type hints throughout the code.
+ - Made variable and function names verbose.
+ - Used guard clauses instead of nested if statements.
+ - Limited the excessive comment use (*I had commented almost every line*) to only when needed.
 
-I like using `uv` a lot. It is very fast. I also like the ability to separate out dev dependencies, such as `matplotlib` for this repo. It also makes trying other versions of python very easy.
+# Future Work
 
-I did not get the hang of `Windsurf`... the main issues I had were with tab-autocomplete. It was very slow and often different from what I wanted. The command option was more useful. I ended up returning to PyCharm.
+There are a few path generation items that could be improved:
+
+1. Remove self intersections in spiral generation and connection (visible in Pikachu example).
+1. Improve the uniformity of the space fill.
+1. Smooth the sharp corners of the path.
+
+The project could also use more unit test coverage, better logging, and an improved entry script.
